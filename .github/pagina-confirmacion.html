@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Fondo blanco */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Centrar verticalmente */
+        }
+
+        .volver {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold; /* Texto del botón en negrita */
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .payment-option {
+            background-color: #f0f0f0; /* Color de los botones (cuadros) */
+            border-radius: 15px; /* Bordes semiredondos */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .payment-option img {
+            width: 80px; /* Tamaño de los iconos */
+            height: 80px;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.1); /* Efecto hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón "Volver" -->
+    <a href="Negocio 5.0.html" class="volver">Volver</a>
+
+    <!-- Opciones de métodos de pago -->
+    <div class="payment-methods">
+        <!-- Bancolombia -->
+        <div class="payment-option">
+            <a href="https://www.bancolombia.com/centro-de-ayuda/canales/sucursal-virtual-personas" target="_blank">
+                <img src="https://i.pinimg.com/originals/b8/cd/c1/b8cdc1ad498fe080bc21bb5a03c24f83.png" alt="Bancolombia">
+            </a>
+        </div>
+
+        <!-- Nequi -->
+        <div class="payment-option">
+            <a href="https://www.nequi.com.co/personas/paga-con-nequi/tarjeta-nequi" target="_blank">
+                <img src="https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/GFMSTY6UIZBUBDE2SPIXGWQVIU.jpg" alt="Nequi">
+            </a>
+        </div>
+
+        <!-- Daviplata -->
+        <div class="payment-option">
+            <a href="https://www.daviplata.com/wps/portal/daviplata/Home/QueEsDaviPlata/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zizQNNDDycTQz93B2dXQ0CDYzMPV3CjA0M3E30wwkpiAJKG-AAjgZA_VFYlDgaOAUZOYEM8DfCqgDFjILcCINMR0VFAIXsUVc!/dz/d5/L2dBISEvZ0FBIS9nQSEh/" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNiaqSUUikL2CdwWL_GtLdNIenoNM0uyurtw&s" alt="Daviplata">
+            </a>
+        </div>
+
+        <!-- Efecty -->
+        <div class="payment-option">
+            <a href="https://www.efecty.com.co/web/" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZl4sgxrhx04HsF4nBMqRbv4ybqSY66cOzxg&s" alt="Efecty">
+            </a>
+        </div>
+
+        <!-- Efectivo -->
+        <div class="payment-option">
+            <a href="efectivo.html">
+                <img src="https://static.vecteezy.com/system/resources/previews/014/677/764/non_2x/cash-money-icon-simple-style-vector.jpg" alt="Efectivo">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
