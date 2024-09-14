@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Fashe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Fondo negro */
+            color: #ffffff; /* Texto blanco */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #003366; /* Azul oscuro */
+            padding: 20px;
+            text-align: center;
+            color: #ffffff; /* Título en blanco */
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .titulo .punto {
+            color: red; /* Punto en rojo */
+        }
+
+        .volver {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .details {
+            width: 70%; /* Ocupa la mayor parte de la pantalla */
+        }
+
+        .item {
+            background-color: #333; /* Fondo gris oscuro para cada item */
+            border: 1px solid #444; /* Borde gris más claro */
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .item:hover {
+            transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+            background-color: #444; /* Cambio de color de fondo al pasar el mouse */
+        }
+
+        .item:active {
+            background-color: #555; /* Cambio de color al hacer clic */
+        }
+
+        .item-details {
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .brand {
+            font-size: 14px;
+            color: #ccc; /* Texto en gris claro */
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff9900; /* Color de precio en un tono naranja */
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .item-link {
+            text-decoration: none; /* Sin subrayado en el enlace */
+            color: inherit; /* Hereda el color del texto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="titulo">Nuesta Tienda<span class="punto">.</span></div>
+        <a href="Negocio 5.0.html" class="volver">Volver</a>
+    </header>
+
+    <div class="container">
+        <div class="details">
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Camisa de Marca</div>
+                        <div class="brand">Marca X</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='camisa.html';">₽ 50,000</div>
+                </div>
+            </a>
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Pantalón Casual</div>
+                        <div class="brand">Marca Y</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='pantalon.html';">₽ 80,000</div>
+                </div>
+            </a>
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Chaqueta de Cuero</div>
+                        <div class="brand">Marca Z</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='chaqueta.html';">₽ 120,000</div>
+                </div>
+            </a>
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Gafas de Sol</div>
+                        <div class="brand">Marca A</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='gafas.html';">₽ 30,000</div>
+                </div>
+            </a>
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Reloj Elegante</div>
+                        <div class="brand">Marca B</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='reloj.html';">₽ 150,000</div>
+                </div>
+            </a>
+            <a href="Metododepago.html" class="item-link">
+                <div class="item">
+                    <div class="item-details">
+                        <div class="label">Bolso de Mano</div>
+                        <div class="brand">Marca C</div>
+                    </div>
+                    <div class="price" onclick="window.location.href='bolso.html';">₽ 60,000</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Aquí puedes añadir funcionalidades dinámicas si es necesario.
+    </script>
+</body>
+</html>

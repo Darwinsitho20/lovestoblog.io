@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Fondo negro */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Centrar verticalmente */
+        }
+
+        .volver {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold; /* Texto del botón en negrita */
+        }
+
+        .payment-box {
+            background-color: #ffffff; /* Fondo blanco para el cuadro */
+            padding: 30px;
+            border-radius: 20px; /* Bordes semiredondos */
+            text-align: center;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Sombra suave */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .pagar-btn {
+            background-color: #ff0000; /* Botón rojo */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .pagar-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón "Volver" -->
+    <a href="Negocio 5.0.html" class="volver">Volver</a>
+
+    <!-- Cuadro semiredondo para el formulario de pago -->
+    <div class="payment-box">
+        <h2>Página de Pago</h2>
+        <form action="pagina-confirmacion.html" method="POST">
+            <!-- Entrada para número de etiqueta -->
+            <input type="text" name="etiqueta" placeholder="Número de Etiqueta" required>
+            
+            <!-- Entrada para nombre del producto -->
+            <input type="text" name="producto" placeholder="Nombre del Producto" required>
+            
+            <!-- Botón de pagar -->
+            <button type="submit" class="pagar-btn">Pagar</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - INICIO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Fondo negro */
+            color: #ffffff; /* Texto en blanco para contraste */
+            position: relative;
+            overflow: hidden; /* Para asegurar que el contenido no se desborde */
+        }
+
+        header {
+            background-color: #003366; /* Azul oscuro */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        header .volver {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #444;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Ocupa toda la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centra verticalmente los cuadros */
+            align-items: center; /* Centra horizontalmente los cuadros */
+            padding: 20px; /* Espacio alrededor del contenido */
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .image-box {
+            width: 220px; /* Tamaño ajustado */
+            height: 220px; /* Tamaño ajustado */
+            overflow: hidden;
+            border: 2px solid #ddd;
+            background-color: #333;
+            position: relative;
+            margin: 0 10px; /* Espacio entre los cuadros */
+            transform-style: preserve-3d; /* Habilita el efecto 3D */
+            perspective: 1000px; /* Define la perspectiva del efecto 3D */
+            transition: transform 0.3s ease; /* Transición suave para el efecto de agrandamiento */
+        }
+
+        .image-box:hover {
+            transform: scale(1.05); /* Agranda el cuadro al pasar el mouse */
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Para asegurar que la imagen se ajuste al cuadro sin sobresalirse */
+            object-position: center;
+            transition: transform 1s; /* Transición suave para el efecto 3D */
+        }
+
+        .image-box img.next {
+            transform: rotateY(180deg); /* Rota la imagen en 3D */
+        }
+
+        .image-box.expanded {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(2); /* Agranda la imagen al hacer clic y centra */
+            z-index: 1000;
+            transition: transform 0.5s ease;
+        }
+
+        .titulo {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .titulo span {
+            color: red;
+        }
+
+        /* Fondo verde con "Cali, Colombia" */
+        .footer-info {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 128, 0, 0.7); /* Fondo verde semitransparente */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px; /* Borde semiredondo */
+            font-weight: bold;
+        }
+
+        /* Hora real en cuadro semiredondo y negro semitransparente */
+        .time-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px; /* Borde semiredondo */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="titulo">Inicio<span>.</span></div>
+        <a class="volver" href="Negocio 5.0.html">Volver</a>
+    </header>
+
+    <div class="container">
+        <!-- Fila superior de cuadros -->
+        <div class="image-row">
+            <div class="image-box" id="box1">
+                <img id="img-box1" src="https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.1&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3c3d31be2" alt="Imagen 1">
+            </div>
+            <div class="image-box" id="box2">
+                <img id="img-box2" src="https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.2&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3d8f65d63" alt="Imagen 2">
+            </div>
+            <div class="image-box" id="box3">
+                <img id="img-box3" src="https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.3&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3dab94d85" alt="Imagen 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Fondo verde con "Cali, Colombia" -->
+    <div class="footer-info">
+        Cali, Colombia
+    </div>
+
+    <!-- Hora real -->
+    <div class="time-info" id="time-info">
+        <!-- La hora será actualizada mediante JavaScript -->
+    </div>
+
+    <script>
+        // Lista de imágenes para cada cuadro (3 cuadros, 2 imágenes cada uno)
+        const imagesBox1 = ['https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.4&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3c4b493f1', 'https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.1&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3c3d31be2'];
+        const imagesBox2 = ['https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.5&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42e3d9d7d576', 'https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.2&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3d8f65d63'];
+        const imagesBox3 = ['https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.6&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3c5960c04', 'https://mail.google.com/mail/u/0?ui=2&ik=65fd99a1f8&attid=0.3&permmsgid=msg-a:r3029938058580120621&th=191dc61b2db03c96&view=att&disp=safe&realattid=191dc60e42d3dab94d85'];
+
+        let currentIndex1 = 0, currentIndex2 = 0, currentIndex3 = 0;
+
+        // Función para cambiar las imágenes con efecto 3D
+        function changeImage(boxId, images, currentIndex) {
+            const imgElement = document.getElementById(boxId);
+            imgElement.classList.add('next'); // Aplica la rotación 3D
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imgElement.src = images[currentIndex]; // Cambia imagen
+                imgElement.classList.remove('next'); // Elimina la rotación 3D
+            }, 1000); // Cambia imagen tras 1 segundo
+            return currentIndex;
+        }
+
+        // Cambio de imágenes cada 5 segundos para cada cuadro
+        setInterval(() => {
+            currentIndex1 = changeImage('img-box1', imagesBox1, currentIndex1);
+        }, 5000);
+
+        setInterval(() => {
+            currentIndex2 = changeImage('img-box2', imagesBox2, currentIndex2);
+        }, 5000);
+
+        setInterval(() => {
+            currentIndex3 = changeImage('img-box3', imagesBox3, currentIndex3);
+        }, 5000);
+
+        // Función para actualizar la hora en tiempo real
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('time-info').textContent = timeString;
+        }
+
+        // Actualiza la hora cada segundo
+        setInterval(updateTime, 1000);
+        updateTime(); // Llama a la función al cargar la página
+
+        // Función para manejar el agrandamiento de imágenes
+        function handleImageClick(event) {
+            const boxes = document.querySelectorAll('.image-box');
+            if (event.currentTarget.classList.contains('expanded')) {
+                // Si ya está expandido, volver a tamaño normal
+                boxes.forEach(box => box.classList.remove('expanded'));
+            } else {
+                // Si no está expandido, agrandar el cuadro clicado
+                boxes.forEach(box => box.classList.remove('expanded'));
+                event.currentTarget.classList.add('expanded');
+            }
+        }
+
+        // Añade el evento de clic a cada cuadro de imagen y al cuerpo de la página
+        document.querySelectorAll('.image-box').forEach(box => {
+            box.addEventListener('click', handleImageClick);
+        });
+
+        document.body.addEventListener('click', () => {
+            const expandedBox = document.querySelector('.image-box.expanded');
+            if (expandedBox) {
+                expandedBox.classList.remove('expanded'); // Vuelve a tamaño normal al hacer clic en el cuerpo
+            }
+        });
+    </script>
+</body>
+</html>
