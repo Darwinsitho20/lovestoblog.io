@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header .logo {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .box {
+            width: 250px;
+            height: 150px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.1);
+        }
+
+        .purple {
+            background-color: #6a0dad;
+            color: white;
+        }
+
+        .white {
+            background-color: white;
+            color: black;
+        }
+
+        .black {
+            background-color: #222;
+            color: white;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #6a0dad;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4b0082;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo">INNOVA</h1>
+    </header>
+
+    <div class="container">
+        <div class="box purple" onclick="window.location.href='productos.html'">
+            <p>Productos</p>
+        </div>
+        <div class="box white" onclick="window.location.href='proyectos.html'">
+            <p>Mis Proyectos</p>
+        </div>
+        <div class="box black" onclick="window.location.href='acerca.html'">
+            <p>Acerca De</p>
+        </div>
+        <div class="box yellow" onclick="window.location.href='contacto.html'">
+            <p>Contacto</p>
+        </div>
+    </div>
+</body>
+</html>
